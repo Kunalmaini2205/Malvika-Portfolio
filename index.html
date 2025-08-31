@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malvika Maini - Digital Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f97316; /* Orange scrollbar */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ea580c; /* Darker orange on hover */
+        }
+        .section-padding {
+            padding: 4rem 1rem;
+        }
+        @media (min-width: 640px) { /* sm */
+            .section-padding {
+                padding: 6rem 2rem;
+            }
+        }
+        @media (min-width: 1024px) { /* lg */
+            .section-padding {
+                padding: 8rem 4rem;
+            }
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-orange-600 rounded-lg p-2 hover:bg-orange-50 transition-colors duration-200">MALVIKA MAINI</a>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-800 focus:outline-none focus:text-orange-600">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="nav-links" class="hidden md:flex md:items-center space-x-6">
+                <a href="#about" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">About Me</a>
+                <a href="#skills" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Skills</a>
+                <a href="#education" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Education</a>
+                <a href="#projects" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Projects</a>
+                <a href="#training" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Training</a>
+                <a href="#certifications" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Certifications</a>
+                <a href="#contact" class="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Contact</a>
+                <a href="https://www.linkedin.com/in/malvika-maini-b6592b286" target="_blank" class="bg-orange-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-orange-700 transition-colors duration-200">
+                    <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
+                </a>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">About Me</a>
+            <a href="#skills" class="block text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Skills</a>
+            <a href="#education" class="block text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Education</a>
+            <a href="#projects" class="block text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Projects</a>
+            <a href="#training" class="block text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Training</a>
+            <a href="#certifications" class="block text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Certifications</a>
+            <a href="#contact" class="block text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium px-3 py-2 rounded-md hover:bg-orange-50">Contact</a>
+            <a href="https://www.linkedin.com/in/malvika-maini-b6592b286" target="_blank" class="block bg-orange-600 text-white text-center px-5 py-2 rounded-full shadow-md hover:bg-orange-700 transition-colors duration-200">
+                <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-gradient-to-br from-yellow-400 to-orange-500 text-white flex items-center justify-center min-h-screen pt-24 pb-12 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#ffffff" fill-opacity="0.1" d="M0,64L48,85.3C96,107,192,149,288,149.3C384,149,480,107,576,106.7C672,107,768,149,864,165.3C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        </div>
+        <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-center px-6 z-10">
+            <div class="md:w-1/2 flex justify-center mb-8 md:mb-0">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-white bg-opacity-20 flex items-center justify-center p-2 shadow-2xl">
+                    <img src="https://placehold.co/300x300/E2E8F0/1A202C?text=Profile+Photo" alt="Malvika Maini" class="w-full h-full object-cover rounded-full border-4 border-white transform hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+            <div class="md:w-1/2 text-center md:text-left md:pl-12">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+                    Malvika Maini
+                </h1>
+                <p class="text-xl md:text-2xl font-light mb-6">
+                    PHARMACY GRADUATE
+                </p>
+                <p class="text-lg md:text-xl font-light opacity-90 mb-8">
+                    A highly motivated and enthusiastic pharmacy graduate eager to contribute my skills and knowledge.
+                </p>
+                <div class="space-x-4">
+                    <a href="#projects" class="bg-white text-orange-600 px-8 py-3 rounded-full text-lg font-semibold shadow-xl hover:bg-gray-100 hover:scale-105 transition-all duration-300 transform inline-block">View Projects</a>
+                    <a href="#contact" class="border border-white text-white px-8 py-3 rounded-full text-lg font-semibold shadow-xl hover:bg-white hover:text-orange-600 hover:scale-105 transition-all duration-300 transform inline-block">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-orange-700 mb-12">About Me</h2>
+            <div class="flex flex-col lg:flex-row items-start lg:space-x-12">
+                <div class="lg:w-2/3 text-lg leading-relaxed mb-8 lg:mb-0">
+                    <p class="mb-4">
+                        I am a graduate pharmacy student with a strong passion and enthusiasm for my work. I am highly motivated to contribute my organizational and teamwork skills, and I am always open to learning new skills and embracing challenges. My goal is to use my academic background and hands-on experience to excel in a professional environment.
+                    </p>
+                </div>
+                <div class="lg:w-1/3 w-full">
+                    <h3 class="text-2xl font-semibold text-orange-600 mb-6">Key Achievements</h3>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
+                            <span>Received the **Unique Student Award** from the Association of Pharmacy Professionals (APP) in 2021.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
+                            <span>Secured a **copyright** for the publication "Novel Drug Approvals for 2022."</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-3 mt-1"></i>
+                            <span>Served as a **Student Coordinator** for university events, demonstrating strong teamwork and organizational skills.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-gray-100">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-orange-700 mb-12">Skills & Languages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Item -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-code text-yellow-500 text-3xl mr-4"></i>
+                        <h3 class="text-2xl font-semibold">Technical Skills</h3>
+                    </div>
+                    <ul class="space-y-2 text-lg">
+                        <li><span class="font-medium">MS Office</span> (MS Word, MS PowerPoint)</li>
+                        <li><span class="font-medium">Basic MS Excel</span></li>
+                        <li><span class="font-medium">Email Writing</span></li>
+                        <li><span class="font-medium">Internet Surfing</span></li>
+                    </ul>
+                </div>
+                <!-- Skill Item -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-users text-orange-500 text-3xl mr-4"></i>
+                        <h3 class="text-2xl font-semibold">Interpersonal Skills</h3>
+                    </div>
+                    <ul class="space-y-2 text-lg">
+                        <li><span class="font-medium">Team Leadership & Teamwork</span></li>
+                        <li><span class="font-medium">Management & Coordination</span></li>
+                        <li><span class="font-medium">Flexible & Adaptable</span></li>
+                        <li><span class="font-medium">Problem-solving ability</span></li>
+                        <li><span class="font-medium">Customer Handling</span></li>
+                        <li><span class="font-medium">Strong Communication Skills</span></li>
+                    </ul>
+                </div>
+                <!-- Skill Item -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-language text-orange-500 text-3xl mr-4"></i>
+                        <h3 class="text-2xl font-semibold">Languages Known</h3>
+                    </div>
+                    <ul class="space-y-2 text-lg">
+                        <li><span class="font-medium">English</span></li>
+                        <li><span class="font-medium">Hindi</span></li>
+                        <li><span class="font-medium">Punjabi</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-padding bg-white">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-orange-700 mb-12">Education</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Education - University -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-3xl font-bold text-orange-600 mb-3">Lovely Professional University</h3>
+                    <p class="text-xl font-medium text-gray-700 mb-2">MBA in Hospital and Healthcare & Operational Management</p>
+                    <p class="text-gray-600 mb-4">Currently Pursuing</p>
+                    <p class="text-gray-700">Currently pursuing a dual-degree MBA program, focusing on the specialized management of healthcare systems and operational efficiency.</p>
+                </div>
+                <!-- Education - Graduation -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-3xl font-bold text-orange-600 mb-3">Maharishi Markandeshwar (Deemed to be University)</h3>
+                    <p class="text-xl font-medium text-gray-700 mb-2">Graduation - B.Pharm</p>
+                    <p class="text-gray-600 mb-4">2019 - 2023 | CGPA: 9.09</p>
+                    <p class="text-gray-700">Completed a Bachelor of Pharmacy degree, gaining comprehensive knowledge in pharmaceutical sciences and drug development.</p>
+                </div>
+                <!-- Education - Intermediate -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-3xl font-bold text-orange-600 mb-3">DC Model Senior Secondary School</h3>
+                    <p class="text-xl font-medium text-gray-700 mb-2">Intermediate (CBSE)</p>
+                    <p class="text-gray-600 mb-4">2018 - 2019 | Percentage: 82.6%</p>
+                    <p class="text-gray-700">Completed high school education with a strong focus on core subjects.</p>
+                </div>
+                <!-- Education - Matriculation -->
+                <div class="lg:col-span-2 bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-3xl font-bold text-orange-600 mb-3">DC Senior Secondary School</h3>
+                    <p class="text-xl font-medium text-gray-700 mb-2">Matriculation (CBSE)</p>
+                    <p class="text-gray-600 mb-4">2016 - 2017 | CGPA: 10</p>
+                    <p class="text-gray-700">Achieved a perfect score in the 10th-grade board examination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-gray-100">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-orange-700 mb-12">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Myricetin-based Solid Dispersion Project -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-8 border-orange-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-orange-600 mb-4">Myricetin-based Solid Dispersion Project</h3>
+                        <p class="text-gray-700 text-lg mb-6">
+                            Completed a project report on the "Formulation and Development of Myricetin based solid dispersion for dissolution enhancement."
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                            <li>Conducted research and experimentation on a novel drug formulation.</li>
+                            <li>Authored a comprehensive report detailing the process and findings.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section id="training" class="section-padding bg-white">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-orange-700 mb-12">Training & Work Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Training Item -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-3xl font-bold text-yellow-600 mb-3">Captab Biotech Training</h3>
+                    <p class="text-xl font-medium text-gray-700 mb-2">Internship</p>
+                    <p class="text-gray-600 mb-4">One-month professional training program at Captab Biotech Unit II in Baddi.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                        <li>Gained hands-on experience in a pharmaceutical industry setting.</li>
+                        <li>Learned professional operational procedures and teamwork.</li>
+                    </ul>
+                    <a href="https://drive.google.com/file/d/1gO5PvBaB7waRpNubrCIzpPs7G2FG7xxK/view" target="_blank" class="border border-yellow-600 text-yellow-600 px-6 py-3 mt-4 inline-flex items-center rounded-full text-lg font-semibold hover:bg-yellow-50 transition-colors duration-200">
+                        <i class="fas fa-external-link-alt mr-2"></i> View Certificate
+                    </a>
+                </div>
+                <!-- Work Experience Item -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md border-t-4 border-yellow-500 hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-3xl font-bold text-yellow-600 mb-3">Teleperformance Global Business Private Limited</h3>
+                    <p class="text-xl font-medium text-gray-700 mb-2">Customer Care Executive</p>
+                    <p class="text-gray-600 mb-4">January 2024 - August 2024</p>
+                    <p class="text-gray-700">Worked as a Customer Care Executive for six months, developing strong customer service and problem-solving abilities.</p>
+                    <a href="https://drive.google.com/file/d/1gSvSroNY8zTc4t2oCEJ9HblPU6ZXSRmU/view" target="_blank" class="border border-yellow-600 text-yellow-600 px-6 py-3 mt-4 inline-flex items-center rounded-full text-lg font-semibold hover:bg-yellow-50 transition-colors duration-200">
+                        <i class="fas fa-external-link-alt mr-2"></i> View Certificate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications" class="section-padding bg-gray-100">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-orange-700 mb-12">Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Certification 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-8 border-yellow-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-yellow-600 mb-4">Novel Drug Approvals Copyright</h3>
+                        <p class="text-gray-700 text-lg mb-6">
+                            Obtained a copyright for the publication "Novel Drug Approvals for 2022."
+                        </p>
+                        <a href="https://drive.google.com/file/d/1gMQfgLa-zYXVzJa-FIBqt1-xe7VgindA/view?usp=drivesdk" target="_blank" class="border border-yellow-600 text-yellow-600 px-6 py-3 mt-4 inline-flex items-center rounded-full text-lg font-semibold hover:bg-yellow-50 transition-colors duration-200">
+                            <i class="fas fa-external-link-alt mr-2"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                <!-- Certification 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-8 border-orange-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-orange-600 mb-4">3rd North Zone Conference</h3>
+                        <p class="text-gray-700 text-lg mb-6">
+                            Received a Certification of Coordination for the 3rd North Zone Conference held at the university.
+                        </p>
+                    </div>
+                </div>
+                <!-- Certification 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-8 border-yellow-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-yellow-600 mb-4">Inter University Carnival Competition</h3>
+                        <p class="text-gray-700 text-lg mb-6">
+                            Received a participation certificate for the inter-university Mr. & Ms. Carnival competition organized by MMDU.
+                        </p>
+                    </div>
+                </div>
+                <!-- Certification 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-8 border-orange-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-orange-600 mb-4">Webinar & Seminar Participation</h3>
+                        <p class="text-gray-700 text-lg mb-6">
+                            Attended a webinar on the Role of Intellectual Property Rights for Academia in 2022 and a seminar organized by APP in 2021.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cover Letter Generator Section -->
+    <section id="cover-letter" class="section-padding bg-white">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-orange-700 mb-8">Cover Letter Generator ✨</h2>
+            <div class="flex justify-center mb-6">
+                <!-- Button to generate cover letter -->
+                <button id="generate-cl-btn" class="bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-orange-700 transition-colors duration-200">
+                    Generate Cover Letter
+                </button>
+            </div>
+            <!-- Loading indicator -->
+            <div id="loading-spinner" class="hidden text-center text-gray-600 mt-4">
+                <i class="fas fa-spinner fa-spin text-4xl text-orange-600"></i>
+                <p class="mt-2">Creating your cover letter...</p>
+            </div>
+            <!-- Display area for the generated cover letter -->
+            <div id="cover-letter-output" class="hidden bg-gray-100 p-8 rounded-lg shadow-md mt-6">
+                <h3 class="text-xl font-bold text-orange-600 mb-4">Draft Cover Letter:</h3>
+                <pre class="whitespace-pre-wrap font-sans text-gray-700"></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gray-100">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-orange-700 mb-12">Get in Touch</h2>
+            <div class="lg:w-1/2 w-full mx-auto">
+                <p class="text-lg text-gray-700 text-center mb-8">
+                    Have a question or just want to connect? Feel free to reach out to me via email or LinkedIn. I am always open to new opportunities and discussions.
+                </p>
+                <div class="space-y-6 text-center">
+                    <div class="flex items-center justify-center text-lg">
+                        <i class="fas fa-phone-alt text-orange-600 text-2xl mr-4"></i>
+                        <a href="tel:7015856773" class="text-gray-800 hover:text-orange-600 transition-colors duration-200">7015856773</a>
+                    </div>
+                    <div class="flex items-center justify-center text-lg">
+                        <i class="fas fa-envelope text-orange-600 text-2xl mr-4"></i>
+                        <a href="mailto:malvimaini05@gmail.com" class="text-gray-800 hover:text-orange-600 transition-colors duration-200">malvimaini05@gmail.com</a>
+                    </div>
+                    <div class="flex items-center justify-center text-lg">
+                        <i class="fas fa-map-marker-alt text-orange-600 text-2xl mr-4"></i>
+                        <span class="text-gray-800">Ambala Cantt, Haryana, India</span>
+                    </div>
+                    <div class="flex justify-center space-x-6 pt-4">
+                        <a href="https://www.linkedin.com/in/malvika-maini-b6592b286" target="_blank" class="text-orange-600 hover:text-orange-800 transition-colors duration-200 social-icon">
+                            <i class="fab fa-linkedin-in text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-screen-xl mx-auto px-6 text-center">
+            <p class="text-lg mb-4">&copy; 2025 Malvika Maini. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-white transition-colors duration-200">Skills</a>
+                <a href="#education" class="text-gray-300 hover:text-white transition-colors duration-200">Education</a>
+                <a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-200">Projects</a>
+                <a href="#training" class="text-gray-300 hover:text-white transition-colors duration-200">Training</a>
+                <a href="#certifications" class="text-gray-300 hover:text-white transition-colors duration-200">Certifications</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                if (document.getElementById('mobile-menu').classList.contains('flex')) {
+                    document.getElementById('mobile-menu').classList.remove('flex');
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            mobileMenu.classList.toggle('flex-col');
+        });
+
+        // Add a simple effect to the navbar on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-3', 'shadow-xl');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('py-3', 'shadow-xl');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Gemini API Integration - Cover Letter Generator
+        const generateBtn = document.getElementById('generate-cl-btn');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const coverLetterOutput = document.getElementById('cover-letter-output');
+        const coverLetterPre = coverLetterOutput.querySelector('pre');
+
+        generateBtn.addEventListener('click', async () => {
+            // UI update: show loading spinner and clear previous output
+            loadingSpinner.classList.remove('hidden');
+            coverLetterOutput.classList.add('hidden');
+            coverLetterPre.textContent = '';
+
+            // User prompt for Gemini API
+            const userPrompt = `
+                I am a graduate pharmacy student.
+                Professional Summary: "I am a graduate pharmacy student with a strong passion and enthusiasm for my work. I am highly motivated to contribute my organizational and teamwork skills, and I am always open to learning new skills and embracing challenges. My goal is to use my academic background and hands-on experience to excel in a professional environment."
+                
+                Key Achievements:
+                - Received the "Unique Student Award" from the Association of Pharmacy Professionals (APP) in 2021.
+                - Secured a copyright for the publication "Novel Drug Approvals for 2022."
+                - Served as a Student Coordinator for university events, demonstrating strong teamwork and organizational skills.
+                - Completed a comprehensive project report on "Formulation and Development of Myricetin based solid dispersion for dissolution enhancement."
+                
+                Please write a concise and professional cover letter draft for a new job application. The cover letter should be based on my professional summary and achievements. It should not be more than 150 words.
+            `;
+
+            try {
+                const apiKey = ""; // API key will be provided by the runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userPrompt }] }],
+                    systemInstruction: {
+                        parts: [{ text: "You are a professional career advisor. Write a concise and professional cover letter based on the provided user profile. Do not include a signature, salutation, or placeholders like [Hiring Manager]." }]
+                    }
+                };
+                
+                // Fetch call with exponential backoff
+                let response;
+                let delay = 1000;
+                const maxRetries = 5;
+                for (let i = 0; i < maxRetries; i++) {
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.status !== 429) {
+                        break;
+                    }
+                    console.warn(`Rate limit exceeded. Retrying in ${delay}ms...`);
+                    await new Promise(res => setTimeout(res, delay));
+                    delay *= 2;
+                }
+
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status} ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "Could not generate cover letter. Please try again.";
+                
+                // Display the generated cover letter
+                coverLetterPre.textContent = text;
+                coverLetterOutput.classList.remove('hidden');
+
+            } catch (error) {
+                console.error("Error generating cover letter:", error);
+                coverLetterPre.textContent = `Error: ${error.message}`;
+                coverLetterOutput.classList.remove('hidden');
+            } finally {
+                // Hide loading spinner regardless of success or failure
+                loadingSpinner.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
